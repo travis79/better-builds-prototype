@@ -9,6 +9,7 @@ name = "better_builds_prototype"
 crate-type = ["lib", "staticlib", "cdylib"]
 
 [dependencies]
+# Application Services
 autofill = { path = "application-services/components/autofill" }
 fxa-client = { path = "application-services/components/fxa-client" }
 fxaclient_ffi = { path = "application-services/components/fxa-client/ffi" }
@@ -47,11 +48,25 @@ webext-storage-ffi = { path = "application-services/components/webext-storage/ff
 sync-test = { path = "application-services/testing/sync-test" }
 protobuf-gen = { path = "application-services/tools/protobuf-gen" }
 
+# Glean
 glean-core = { path = "glean/glean-core" }
 glean-ffi = { path = "glean/glean-core/ffi" }
 glean = { path = "glean/glean-core/rlb" }
 
+# Nimbus
+nimbus-sdk = { path = "nimbus-sdk/nimbus" }
+
+# Uniffi
+uniffi = { path = "uniffi-rs/uniffi" }
+uniffi_bindgen = { path = "uniffi-rs/uniffi_bindgen" }
+uniffi_build = { path = "uniffi-rs/uniffi_build" }
+uniffi_macros = { path = "uniffi-rs/uniffi_macros" }
+i356-enum-without-int-helpers = { path = "uniffi-rs/fixtures/regressions/enum-without-i32-helpers" }
+
 [workspace]
+# Excluding these to avoid the virtual workspace cargo.toml files for the individual
+# projects. Also including the "excludes" from those virtual workspaces, but not sure
+# if that is necessary or not because we are using "path" dependencies here.
 exclude = [
     "application-services",
     "application-services/megazords/full",
@@ -71,10 +86,11 @@ viaduct = { path = "application-services/components/viaduct" }
 [patch."https://github.com/mozilla/glean"]
 glean = { path = "glean/glean-core/rlb" }
 
+[patch."https://github.com/mozilla/nimbus-sdk"]
 nimbus-sdk = { path = "nimbus-sdk/nimbus" }
 
+[patch."https://github.com/mozilla/uniffi-rs"]
 uniffi = { path = "uniffi-rs/uniffi" }
 uniffi_bindgen = { path = "uniffi-rs/uniffi_bindgen" }
 uniffi_build = { path = "uniffi-rs/uniffi_build" }
 uniffi_macros = { path = "uniffi-rs/uniffi_macros" }
-i356-enum-without-int-helpers = { path = "uniffi-rs/fixtures/regressions/enum-without-i32-helpers" }
