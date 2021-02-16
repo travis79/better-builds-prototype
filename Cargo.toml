@@ -86,10 +86,13 @@ viaduct = { path = "application-services/components/viaduct" }
 [patch."https://github.com/mozilla/glean"]
 glean = { path = "glean/glean-core/rlb" }
 
-[patch."https://github.com/mozilla/nimbus-sdk"]
-nimbus-sdk = { path = "nimbus-sdk/nimbus" }
-
 [patch."https://github.com/mozilla/uniffi-rs"]
+uniffi = { path = "uniffi-rs/uniffi" }
+uniffi_bindgen = { path = "uniffi-rs/uniffi_bindgen" }
+uniffi_build = { path = "uniffi-rs/uniffi_build" }
+uniffi_macros = { path = "uniffi-rs/uniffi_macros" }
+
+[patch.crates-io]
 uniffi = { path = "uniffi-rs/uniffi" }
 uniffi_bindgen = { path = "uniffi-rs/uniffi_bindgen" }
 uniffi_build = { path = "uniffi-rs/uniffi_build" }
