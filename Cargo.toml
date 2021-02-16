@@ -11,56 +11,22 @@ crate-type = ["lib", "staticlib", "cdylib"]
 [dependencies]
 # Application Services
 autofill = { path = "application-services/components/autofill" }
-# fxa-client = { path = "application-services/components/fxa-client" }
 fxaclient_ffi = { path = "application-services/components/fxa-client/ffi" }
-# logins = { path = "application-services/components/logins" }
 logins_ffi = { path = "application-services/components/logins/ffi" }
-# places = { path = "application-services/components/places" }
 places-ffi = { path = "application-services/components/places/ffi" }
-# push = { path = "application-services/components/push" }
 push-ffi = { path = "application-services/components/push/ffi" }
 rc_log_ffi = { path = "application-services/components/rc_log" }
-# error-support = { path = "application-services/components/support/error" }
 ffi-support = { path = "application-services/components/support/ffi" }
-# sync-guid = { path = "application-services/components/support/guid" }
-# interrupt-support = { path = "application-services/components/support/interrupt" }
-# jwcrypto = { path = "application-services/components/support/jwcrypto" }
-# rand_rccrypto = { path = "application-services/components/support/rand_rccrypto" }
-# rate-limiter = { path = "application-services/components/support/rate-limiter" }
-# rc_crypto = { path = "application-services/components/support/rc_crypto" }
-# nss = { path = "application-services/components/support/rc_crypto/nss" }
-# nss_build_common = { path = "application-services/components/support/rc_crypto/nss/nss_build_common" }
-# nss_sys = { path = "application-services/components/support/rc_crypto/nss/nss_sys" }
-# systest = { path = "application-services/components/support/rc_crypto/nss/systest" }
-# restmail-client = { path = "application-services/components/support/restmail-client" }
-# sql-support = { path = "application-services/components/support/sql" }
-# sync15-traits = { path = "application-services/components/support/sync15-traits" }
-# types = { path = "application-services/components/support/types" }
-# viaduct-reqwest = { path = "application-services/components/support/viaduct-reqwest" }
-# sync_manager = { path = "application-services/components/sync_manager" }
 sync_manager_ffi = { path = "application-services/components/sync_manager/ffi" }
-# sync15 = { path = "application-services/components/sync15" }
-# tabs = { path = "application-services/components/tabs" }
 tabs_ffi = { path = "application-services/components/tabs/ffi" }
 viaduct = { path = "application-services/components/viaduct" }
-# webext-storage = { path = "application-services/components/webext-storage" }
 webext-storage-ffi = { path = "application-services/components/webext-storage/ffi" }
-# sync-test = { path = "application-services/testing/sync-test" }
-# protobuf-gen = { path = "application-services/tools/protobuf-gen" }
 
 # Glean
-# glean-core = { path = "glean/glean-core" }
 glean-ffi = { path = "glean/glean-core/ffi" }
-# glean = { path = "glean/glean-core/rlb" }
 
 # Nimbus
 nimbus-sdk = { path = "nimbus-sdk/nimbus" }
-
-# Uniffi
-# uniffi = { path = "uniffi-rs/uniffi" }
-# uniffi_bindgen = { path = "uniffi-rs/uniffi_bindgen" }
-# uniffi_build = { path = "uniffi-rs/uniffi_build" }
-# uniffi_macros = { path = "uniffi-rs/uniffi_macros" }
 
 [workspace]
 # Excluding these to avoid the virtual workspace cargo.toml files for the individual
@@ -82,17 +48,7 @@ exclude = [
 [patch."https://github.com/mozilla/application-services"]
 viaduct = { path = "application-services/components/viaduct" }
 
-# [patch."https://github.com/mozilla/glean"]
-# glean = { path = "glean/glean-core/rlb" }
-
-[patch."https://github.com/mozilla/uniffi-rs"]
-uniffi = { path = "uniffi-rs/uniffi" }
-uniffi_bindgen = { path = "uniffi-rs/uniffi_bindgen" }
-uniffi_build = { path = "uniffi-rs/uniffi_build" }
-uniffi_macros = { path = "uniffi-rs/uniffi_macros" }
-
 [patch.crates-io]
 uniffi = { path = "uniffi-rs/uniffi" }
 uniffi_bindgen = { path = "uniffi-rs/uniffi_bindgen" }
 uniffi_build = { path = "uniffi-rs/uniffi_build" }
-uniffi_macros = { path = "uniffi-rs/uniffi_macros" }
