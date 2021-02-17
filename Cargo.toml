@@ -28,6 +28,9 @@ glean-ffi = { path = "glean/glean-core/ffi" }
 # Nimbus
 nimbus-sdk = { path = "nimbus-sdk/nimbus" }
 
+# Needed to treat pointers like lazy-statics
+lazy_static = "1.4"
+
 [workspace]
 # Excluding these to avoid the virtual workspace cargo.toml files for the individual
 # projects. Also including the "excludes" from those virtual workspaces, but not sure
