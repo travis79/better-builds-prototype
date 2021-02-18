@@ -1,0 +1,115 @@
+libraryVersion: 0.0.1
+groupId: org.mozilla.rustcomponents
+projects:
+  glean:
+    path: glean/glean-core/android
+    artifactId: glean
+    publications:
+      - name: glean
+        type: aar
+      - name: glean-forUnitTests
+        type: jar
+    description: 'The Glean SDK is a modern approach for a Telemetry library and is part of the Glean project.'
+  glean-gradle-plugin:
+    path: glean/gradle-plugin
+    artifactId: glean-gradle-plugin
+    publications:
+      - name: glean-gradle-plugin
+        type: jar
+    description: 'A Gradle plugin to enable Glean SDK build-time support (metrics and pings API, docs, ...)'
+  nimbus:
+    path: nimbus-sdk/android
+    artifactId: nimbus
+    publications:
+      - name: nimbus
+        type: aar
+      - name: nimbus-forUnitTests
+        type: jar
+    description: 'A rapid experimentation platform for running different kinds of experiments'
+  autofill:
+    path: application-services/components/autofill/android
+    artifactId: autofill
+    publications:
+    - name: autofill
+      type: aar
+    description: Addresses and Credit Cards autofill.
+  fxaclient:
+    path: application-services/components/fxa-client/android
+    artifactId: fxaclient
+    publications:
+    - name: fxaclient
+      type: aar
+    description: Firefox Accounts client.
+  logins:
+    path: application-services/components/logins/android
+    artifactId: logins
+    publications:
+    - name: logins
+      type: aar
+    description: Sync 1.5 logins implementation.
+  places:
+    path: application-services/components/places/android
+    artifactId: places
+    publications:
+    - name: places
+      type: aar
+    description: Low level places storage implementation.
+  rustlog:
+    path: application-services/components/rc_log/android
+    artifactId: rustlog
+    publications:
+    - name: rustlog
+      type: aar
+    description: Android hook into the log crate.
+  httpconfig:
+    path: application-services/components/viaduct/android
+    artifactId: httpconfig
+    publications:
+    - name: httpconfig
+      type: aar
+    description: Component allowing the configuration of Rust HTTP stack.
+  native-support:
+    path: application-services/components/support/android
+    artifactId: native-support
+    publications:
+    - name: native-support
+      type: aar
+    description: Shared native code utilities for rust component kotlin.
+  push:
+    path: application-services/components/push/android
+    artifactId: push
+    publications:
+    - name: push
+      type: aar
+    description: Low level WebPush handler implementation.
+  sync15:
+    path: application-services/components/sync15/android
+    artifactId: sync15
+    publications:
+    - name: sync15
+      type: aar
+    description: Shared Sync types for Kotlin.
+  syncmanager:
+    path: application-services/components/sync_manager/android
+    artifactId: syncmanager
+    publications:
+    - name: syncmanager
+      type: aar
+    description: Sync manager implementation
+  tabs:
+    path: application-services/components/tabs/android
+    artifactId: tabs
+    publications:
+    - name: tabs
+      type: aar
+    description: Sync 1.5 remote tabs implementation.
+  full-megazord:
+    uploadSymbols: true
+    path: megazords/full/android
+    artifactId: full-megazord
+    publications:
+    - name: full-megazord
+      type: aar
+    - name: full-megazord-forUnitTests
+      type: jar
+    description: Megazord containing all features
