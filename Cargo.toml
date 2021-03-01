@@ -51,6 +51,9 @@ exclude = [
 [patch."https://github.com/mozilla/application-services"]
 viaduct = { path = "application-services/components/viaduct" }
 
+[patch."https://github.com/mozilla/nimbus-sdk"]
+nimbus-sdk = { path = "nimbus-sdk/nimbus" }
+
 [patch.crates-io]
 uniffi = { path = "uniffi-rs/uniffi" }
 uniffi_bindgen = { path = "uniffi-rs/uniffi_bindgen" }
