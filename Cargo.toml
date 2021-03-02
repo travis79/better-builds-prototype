@@ -26,7 +26,9 @@ webext-storage-ffi = { path = "application-services/components/webext-storage/ff
 glean-ffi = { path = "glean/glean-core/ffi" }
 
 # Nimbus
-nimbus-sdk = { path = "nimbus-sdk/nimbus" }
+# (This will look more like "Application Services" above once Nimbus is no
+# longer an "external" component)
+nimbus-sdk = { path = "application-services/components/external/nimbus-sdk/nimbus" }
 
 # Needed to treat pointers like lazy-statics
 lazy_static = "1.4"
@@ -38,9 +40,8 @@ lazy_static = "1.4"
 exclude = [
     "application-services",
     "application-services/megazords/full",
-    "application-services/megazords/ios",
+    "application-services/megazords/ios/rust",
     "application-services/components/external/glean",
-    "application-services/components/external/nimbus-sdk",
     "glean",
     "glean/samples/multi-bindings",
     "uniffi-rs"
@@ -50,6 +51,10 @@ exclude = [
 # We always want to use the local version of our own crates in that case.
 [patch."https://github.com/mozilla/application-services"]
 viaduct = { path = "application-services/components/viaduct" }
+glean-ffi = { path = "glean/glean-core/ffi" }
+
+[patch."https://github.com/mozilla/nimbus-sdk"]
+nimbus-sdk = { path = "application-services/components/external/nimbus-sdk/nimbus" }
 
 [patch.crates-io]
 uniffi = { path = "uniffi-rs/uniffi" }
