@@ -10,13 +10,10 @@ plugins {
 
     // Apply the java-library plugin for API and implementation separation.
     id 'java-library'
-
-    id 'com.android.library'
 }
 
 repositories {
-    // Use jcenter for resolving dependencies.
-    // You can declare any Maven/Ivy/file repository here.
+    google()
     jcenter()
 }
 
@@ -32,4 +29,10 @@ dependencies {
 
     // Use the Kotlin JUnit integration.
     testImplementation 'org.jetbrains.kotlin:kotlin-test-junit'
+}
+
+tasks.register('publishToMavenLocal') {
+    // Just testing the delegation of tasks
+    dependsOn gradle.includedBuild('glean').task(':glean:publishToMavenLocal')
+    dependsOn gradle.includedBuild('application-services').task(':full-megazord:publishToMavenLocal')
 }

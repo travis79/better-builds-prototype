@@ -4,9 +4,6 @@
 [submodule "glean"]
 	path = glean
 	url = https://github.com/mozilla/glean
-[submodule "nimbus-sdk"]
-	path = nimbus-sdk
-	url = https://github.com/mozilla/nimbus-sdk
 [submodule "uniffi-rs"]
 	path = uniffi-rs
 	url = https://github.com/mozilla/uniffi-rs

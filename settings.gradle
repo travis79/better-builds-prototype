@@ -9,6 +9,5 @@
 
 rootProject.name = 'better-builds-prototype'
 
-includeBuild 'nimbus-sdk/android'
 includeBuild 'glean'
 includeBuild 'application-services'
